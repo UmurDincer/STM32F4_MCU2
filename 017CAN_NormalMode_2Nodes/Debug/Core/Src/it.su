@@ -1,0 +1,7 @@
+it.c:13:6:SysTick_Handler	8	static
+it.c:20:6:TIM6_DAC_IRQHandler	8	static
+it.c:25:6:EXTI0_IRQHandler	8	static
+it.c:31:6:CAN1_TX_IRQHandler	8	static
+it.c:36:6:CAN1_RX0_IRQHandler	8	static
+it.c:41:6:CAN1_RX1_IRQHandler	8	static
+it.c:46:6:CAN1_SCE_IRQHandler	8	static

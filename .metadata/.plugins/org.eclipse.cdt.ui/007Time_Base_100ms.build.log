@@ -1,0 +1,10 @@
+14:39:34 **** Build of configuration Debug for project 007Time_Base_100ms ****
+make -j12 all 
+arm-none-eabi-size   007Time_Base_100ms.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3388	     20	   1644	   5052	   13bc	007Time_Base_100ms.elf
+Finished building: default.size.stdout
+ 
+
+14:39:35 Build Finished. 0 errors, 0 warnings. (took 341ms)
+

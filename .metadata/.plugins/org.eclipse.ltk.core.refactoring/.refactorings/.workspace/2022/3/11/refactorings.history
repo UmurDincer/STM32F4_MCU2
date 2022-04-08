@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;026RTC_AlarmA_Standby_WakeUp&apos; to &apos;027RTC_AlarmA_Standby_WakeUp&apos;" description="Rename resource &apos;026RTC_AlarmA_Standby_WakeUp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/026RTC_AlarmA_Standby_WakeUp" name="027RTC_AlarmA_Standby_WakeUp" stamp="1646727906933" updateReferences="true"/>
+</session>

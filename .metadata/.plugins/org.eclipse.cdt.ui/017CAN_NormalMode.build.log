@@ -1,0 +1,51 @@
+12:16:04 **** Incremental Build of configuration Debug for project 017CAN_NormalMode ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/it.d" -MT"Core/Src/it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/it.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/msp.d" -MT"Core/Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/msp.o"
+../Core/Src/it.c:11:8: error: unknown type name 'TIM_HandleTypeDef'
+   11 | extern TIM_HandleTypeDef htimer6;
+      |        ^~~~~~~~~~~~~~~~~
+../Core/Src/msp.c:52:27: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'SPI_HandleTypeDef'?
+   52 | void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htimer)
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           SPI_HandleTypeDef
+../Core/Src/it.c: In function 'TIM6_DAC_IRQHandler':
+../Core/Src/it.c:22:2: warning: implicit declaration of function 'HAL_TIM_IRQHandler'; did you mean 'HAL_SPI_IRQHandler'? [-Wimplicit-function-declaration]
+   22 |  HAL_TIM_IRQHandler(&htimer6);
+      |  ^~~~~~~~~~~~~~~~~~
+      |  HAL_SPI_IRQHandler
+make: *** [Core/Src/subdir.mk:28: Core/Src/msp.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/it.c: In function 'EXTI0_IRQHandler':
+../Core/Src/it.c:27:2: warning: implicit declaration of function 'HAL_TIM_Base_Start' [-Wimplicit-function-declaration]
+   27 |  HAL_TIM_Base_Start(htimer6);
+      |  ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:28: Core/Src/it.o] Error 1
+../Core/Src/main.c:26:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'SPI_HandleTypeDef'?
+   26 | TIM_HandleTypeDef htimer6;
+      | ^~~~~~~~~~~~~~~~~
+      | SPI_HandleTypeDef
+../Core/Src/main.c: In function 'TIMER6_Init':
+../Core/Src/main.c:326:9: error: request for member 'Instance' in something not a structure or union
+  326 |  htimer6.Instance = TIM6;
+      |         ^
+../Core/Src/main.c:327:9: error: request for member 'Init' in something not a structure or union
+  327 |  htimer6.Init.Prescaler = 4999;
+      |         ^
+../Core/Src/main.c:328:9: error: request for member 'Init' in something not a structure or union
+  328 |  htimer6.Init.Period = 10000-1;
+      |         ^
+../Core/Src/main.c:329:6: warning: implicit declaration of function 'HAL_TIM_Base_Init' [-Wimplicit-function-declaration]
+  329 |  if( HAL_TIM_Base_Init(&htimer6) != HAL_OK )
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:336:36: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'SPI_HandleTypeDef'?
+  336 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |                                    ^~~~~~~~~~~~~~~~~
+      |                                    SPI_HandleTypeDef
+make: *** [Core/Src/subdir.mk:28: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+12:16:04 Build Failed. 11 errors, 3 warnings. (took 431ms)
+

@@ -1,0 +1,27 @@
+12:00:14 **** Build of configuration Debug for project 004PLL_SYSCLK ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:32:121: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+   32 |  sprintf(msg, "Press number for\n[1]SYS_CLOCK_FREQ_50_MHZ\n[2]SYS_CLOCK_FREQ_84_MHZ\n[3]SYS_CLOCK_FREQ_120_MHZ\n\nEntry:");
+      |                                                                                                                         ^
+../Core/Src/main.c:32:2: note: 'sprintf' output 101 bytes into a destination of size 100
+   32 |  sprintf(msg, "Press number for\n[1]SYS_CLOCK_FREQ_50_MHZ\n[2]SYS_CLOCK_FREQ_84_MHZ\n[3]SYS_CLOCK_FREQ_120_MHZ\n\nEntry:");
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "004PLL_SYSCLK.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\umurd\Desktop\MCU2\004PLL_SYSCLK\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="004PLL_SYSCLK.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 004PLL_SYSCLK.elf
+ 
+arm-none-eabi-size   004PLL_SYSCLK.elf 
+arm-none-eabi-objdump -h -S  004PLL_SYSCLK.elf  > "004PLL_SYSCLK.list"
+arm-none-eabi-objcopy  -O binary  004PLL_SYSCLK.elf  "004PLL_SYSCLK.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11076	    120	   1768	  12964	   32a4	004PLL_SYSCLK.elf
+Finished building: default.size.stdout
+ 
+Finished building: 004PLL_SYSCLK.bin
+ 
+Finished building: 004PLL_SYSCLK.list
+ 
+
+12:00:15 Build Finished. 0 errors, 1 warnings. (took 855ms)
+

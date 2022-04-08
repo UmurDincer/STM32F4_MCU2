@@ -1,0 +1,5 @@
+main.c:21:5:main	8	static
+main.c:48:6:SystemClock_Config	88	static
+main.c:133:6:GPIO_Init	32	static
+main.c:147:6:TIMER6_Init	8	static
+main.c:159:6:Error_handler	4	static

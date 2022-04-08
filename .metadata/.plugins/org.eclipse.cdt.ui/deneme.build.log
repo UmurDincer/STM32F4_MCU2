@@ -1,0 +1,10 @@
+17:33:04 **** Incremental Build of configuration Debug for project deneme ****
+make -j12 all 
+arm-none-eabi-size   deneme.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5816	     20	   1572	   7408	   1cf0	deneme.elf
+Finished building: default.size.stdout
+ 
+
+17:33:04 Build Finished. 0 errors, 0 warnings. (took 219ms)
+

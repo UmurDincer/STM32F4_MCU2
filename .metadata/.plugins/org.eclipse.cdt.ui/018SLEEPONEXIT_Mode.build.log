@@ -1,0 +1,10 @@
+12:25:33 **** Build of configuration Debug for project 018SLEEPONEXIT_Mode ****
+make -j12 all 
+arm-none-eabi-size   018SLEEPONEXIT_Mode.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6916	     64	   1712	   8692	   21f4	018SLEEPONEXIT_Mode.elf
+Finished building: default.size.stdout
+ 
+
+12:25:33 Build Finished. 0 errors, 0 warnings. (took 283ms)
+
